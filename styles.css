@@ -1,0 +1,51 @@
+/* Apply Flexbox to the entire body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Makes sure the body takes up the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    background-image: url('snail.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Wrapper will grow to take up available space */
+.wrapper {
+    flex: 1; /* Takes up the remaining space, pushing the footer down */
+}
+
+/* Style your header */
+header {
+    background: #58004e;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Style your main content */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #dcc9eb;
+}
+
+/* Style your article */
+article {
+    margin-bottom: 20px;
+}
+
+/* Style your footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}
