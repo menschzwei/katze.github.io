@@ -10,6 +10,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    font-family: 'Courier New', Courier, monospace; /* Or any other font */
+    font-size: 22px; /* Adjust as needed */
 }
 
 /* Wrapper will grow to take up available space */
@@ -21,7 +23,7 @@ body {
 header {
     background: #58004e;
     color: #fff;
-    padding: 0px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -29,17 +31,70 @@ h1 {
     margin: 0;
 }
 
-/* Style your main content */
-main {
-    padding: 20px;
-    max-width: 800px;
+/* Wrapper for the content and sidebar */
+.content {
+    display: flex; /* Creates a flex container */
+    justify-content: space-between; /* Distributes space between elements */
+    max-width: 1200px;
     margin: 0 auto;
-    background: #dcc9eb;
+    padding: 20px;
 }
 
-/* Style your article */
-article {
-    margin-bottom: 20px;
+/* Sidebar Styles */
+.sidebar {
+    width: 25%; /* Adjust width as needed */
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #58004e;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    color: #800080; /* Change to a slightly different color on hover */
+}
+
+/* Main Content Styles */
+main {
+    flex-grow: 1; /* Allows main content to take up remaining space */
+    padding: 20px;
+    background: rgba(220, 201, 235, 0.5); /* Transparent background */
+    margin-left: 20px; /* Adds some space between the sidebar and main content */
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack sidebar and main content */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar takes full width */
+        margin-bottom: 20px; /* Adds space below the sidebar */
+    }
+
+    main {
+        margin-left: 0; /* Remove left margin on smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
 }
 
 /* Style your footer */
