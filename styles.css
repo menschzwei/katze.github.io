@@ -43,7 +43,7 @@ h1 {
 /* Sidebar Styles */
 .sidebar {
     width: 25%; /* Adjust width as needed */
-    background-color: #f4f4f478; /*changes background color of sidebar */
+    background-color: #f4f4f400; /*changes background color of sidebar */
     padding: 15px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
 }
@@ -64,12 +64,12 @@ h1 {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #58004e;
+    color: #ffffff;
     font-weight: bold;
 }
 
 .sidebar ul li a:hover {
-    color: #00807e; /* Change to a slightly different color on hover */
+    color: #045e5c; /* Change to a slightly different color on hover */
 }
 
 /* Main Content Styles */
