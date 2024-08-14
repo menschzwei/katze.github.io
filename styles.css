@@ -5,7 +5,7 @@ body {
     min-height: 100vh; /* Makes sure the body takes up the full height of the viewport */
     margin: 0;
     padding: 0;
-    background-image: url('snail.jpg');
+    background-image: url('snail black back .jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -21,8 +21,8 @@ body {
 
 /* Style your header */
 header {
-    background: #58004e;
-    color: #fff;
+    background: #58004e00;
+    color: #ffffff;
     padding: 10px 0;
     text-align: center;
 }
@@ -43,9 +43,9 @@ h1 {
 /* Sidebar Styles */
 .sidebar {
     width: 25%; /* Adjust width as needed */
-    background-color: #f4f4f4;
+    background-color: #f4f4f478; /*changes background color of sidebar */
     padding: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
 }
 
 .sidebar h3 {
@@ -69,7 +69,7 @@ h1 {
 }
 
 .sidebar ul li a:hover {
-    color: #800080; /* Change to a slightly different color on hover */
+    color: #00807e; /* Change to a slightly different color on hover */
 }
 
 /* Main Content Styles */
@@ -101,6 +101,6 @@ main {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #333;
+    background: #33333300;
     color: #fff;
 }
