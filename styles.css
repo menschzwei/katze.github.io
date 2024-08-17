@@ -1,51 +1,83 @@
-/* Apply Flexbox to the entire body */
+/* General Body Styles */
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Makes sure the body takes up the full height of the viewport */
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url('snail black back .jpg');
+    background-image: url('snail.jpg'); /* Adjust this to your image file */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    font-family: 'Courier New', Courier, monospace; /* Or any other font */
-    font-size: 22px; /* Adjust as needed */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Transparent Header Text for Homepage */
+.home-page header h1 {
+    color: rgba(255, 255, 255, 0); /* Fully transparent text */
+}
+
+/* Dark overlay for specific pages */
+.anecdotes-page::before,
+.essays-page::before,
+.projects-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: -1;
 }
 
 /* Wrapper will grow to take up available space */
 .wrapper {
-    flex: 1; /* Takes up the remaining space, pushing the footer down */
+    flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
 /* Style your header */
 header {
-    background: #58004e00;
-    color: #ffffff;
+    background: transparent;
+    color: rgb(9, 255, 0); /* Default text color */
     padding: 10px 0;
     text-align: center;
+    z-index: 2;
+    position: relative;
 }
 
-h1 {
+/* Reset header text color */
+header h1 {
     margin: 0;
+    color: rgba(255, 255, 255, 1); /* Default text color for other pages */
 }
 
 /* Wrapper for the content and sidebar */
 .content {
-    display: flex; /* Creates a flex container */
-    justify-content: space-between; /* Distributes space between elements */
+    display: flex;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 25%; /* Adjust width as needed */
-    background-color: #f4f4f400; /*changes background color of sidebar */
+    width: 25%;
+    background-color: transparent; /* Transparent background for sidebar */
     padding: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+    box-shadow: none;
+    z-index: 2;
+    position: relative;
 }
 
 .sidebar h3 {
@@ -54,7 +86,7 @@ h1 {
 }
 
 .sidebar ul {
-    list-style-type: none; /* Removes bullet points */
+    list-style-type: none;
     padding: 0;
 }
 
@@ -64,36 +96,39 @@ h1 {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 1);
     font-weight: bold;
 }
 
 .sidebar ul li a:hover {
-    color: #045e5c; /* Change to a slightly different color on hover */
+    color: #045e5c;
 }
 
 /* Main Content Styles */
 main {
-    flex-grow: 1; /* Allows main content to take up remaining space */
+    flex-grow: 1;
     padding: 20px;
-    background: rgba(220, 201, 235, 0.5); /* Transparent background */
-    margin-left: 20px; /* Adds some space between the sidebar and main content */
+    background: transparent;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 20px;
+    z-index: 2;
+    position: relative;
 }
 
 /* Adjust padding for smaller screens */
 @media (max-width: 768px) {
     .content {
-        flex-direction: column; /* Stack sidebar and main content */
+        flex-direction: column;
     }
 
     .sidebar {
-        width: 100%; /* Sidebar takes full width */
-        margin-bottom: 20px; /* Adds space below the sidebar */
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     main {
-        margin-left: 0; /* Remove left margin on smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
+        margin-left: 0;
+        padding: 10px;
     }
 }
 
@@ -101,6 +136,8 @@ main {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #33333300;
+    background: transparent;
     color: #fff;
+    z-index: 2;
+    position: relative;
 }
