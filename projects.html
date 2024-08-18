@@ -6,14 +6,21 @@
     <title>Katze</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="projects-page"> <!-- Add a class to the body to differentiate pages -->
+<body class="projects-page"> <!-- Change this class depending on the page -->
     <div class="wrapper">
         <header>
             <h1>Katze</h1>
         </header>
 
+        <!-- Sidebar Toggle Button (Three Stripes) -->
+        <div class="sidebar-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
         <div class="content">
-            <!-- Sidebar -->
+            <!-- Sidebar (initially hidden, slides out) -->
             <aside class="sidebar">
                 <h3>Categories</h3>
                 <ul>
@@ -26,8 +33,8 @@
 
             <main>
                 <!-- Main content for the page goes here -->
-                <h2>Welcome to Katze's Blog</h2>
-                <p>Here you'll find essays, anecdotes, and projects.</p>
+                <h2>Essays</h2>
+                <p>Welcome to the Essays section.</p>
             </main>
         </div>
     </div>
@@ -35,5 +42,12 @@
     <footer>
         <p>This is the footer content.</p>
     </footer>
+
+    <script>
+        // JavaScript to handle sidebar toggle
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

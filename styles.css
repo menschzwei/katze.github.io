@@ -17,9 +17,9 @@ body {
     z-index: 1;
 }
 
-/* Transparent Header Text for Homepage */
+/* Home Page Header */
 .home-page header h1 {
-    color: rgba(255, 255, 255, 0); /* Fully transparent text */
+    color: rgba(255, 255, 255, 0);
 }
 
 /* Dark overlay for specific pages */
@@ -46,28 +46,69 @@ body {
 /* Style your header */
 header {
     background: transparent;
-    color: rgb(9, 255, 0); /* Default text color */
+    color: rgb(9, 255, 0); /* Text color */
     padding: 10px 0;
     text-align: center;
     z-index: 2;
     position: relative;
 }
 
-/* Reset header text color */
-header h1 {
+h1 {
     margin: 0;
-    color: rgba(255, 255, 255, 1); /* Default text color for other pages */
 }
 
-/* Wrapper for the content and sidebar */
-.content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Sidebar Toggle Button for Non-home Pages */
+.anecdotes-page .sidebar-toggle,
+.essays-page .sidebar-toggle,
+.projects-page .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.sidebar-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff; /* Color of the stripes */
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Pop-out Sidebar for Non-home Pages */
+.anecdotes-page .sidebar,
+.essays-page .sidebar,
+.projects-page .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: left 0.3s ease;
     padding: 20px;
-    position: relative;
-    z-index: 2;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0; /* Slide in from the left */
+}
+
+/* Content Styling */
+.content {
+    margin-left: 20px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.active + .content {
+    margin-left: 270px; /* Adjust based on sidebar width */
 }
 
 /* Sidebar Styles */
