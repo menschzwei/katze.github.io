@@ -88,14 +88,23 @@ h1 {
     left: -250px; /* Hidden by default */
     width: 250px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.796);
+    background-color: rgba(0, 0, 0, 0.9); /* Black background when popped out */
     transition: left 0.3s ease;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.871);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     z-index: 999;
     overflow-y: auto;
 }
 
+/* Sidebar transparency when not active */
+.anecdotes-page .sidebar:not(.active),
+.essays-page .sidebar:not(.active),
+.projects-page .sidebar:not(.active) {
+    background-color: transparent; /* Transparent background when not popped out */
+    box-shadow: none; /* Remove shadow when not active */
+}
+
+/* Show sidebar when active */
 .sidebar.active {
     left: 0; /* Slide in from the left */
 }
@@ -114,7 +123,7 @@ h1 {
 /* Sidebar Styles */
 .sidebar {
     width: 25%;
-    background-color: transparent; /* Transparent background for sidebar */
+    background-color: transparent; /* Transparent background for sidebar on homepage */
     padding: 15px;
     box-shadow: none;
     z-index: 2;
@@ -137,7 +146,7 @@ h1 {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1); /* Ensure text color is white */
     font-weight: bold;
 }
 
