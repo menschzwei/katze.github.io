@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katze</title>
+    <title>Essays</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="essays-page"> <!-- Change this class depending on the page -->
+<body class="essays-page">
     <div class="wrapper">
         <header>
-            <h1>Katze</h1>
+            <h1>Essays</h1>
         </header>
-
+        
         <!-- Sidebar Toggle Button (Three Stripes) -->
         <div class="sidebar-toggle">
             <div class="bar"></div>
@@ -19,6 +19,7 @@
             <div class="bar"></div>
         </div>
 
+        <!-- Content Container -->
         <div class="content">
             <!-- Sidebar (initially hidden, slides out) -->
             <aside class="sidebar">
@@ -31,10 +32,15 @@
                 </ul>
             </aside>
 
+            <!-- Main Content Area -->
             <main>
-                <!-- Main content for the page goes here -->
-                <h2>Essays</h2>
-                <p>Welcome to the Essays section.</p>
+                <h2>Essays Overview</h2>
+                <ul class="essay-list">
+                    <li><a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.</li>
+                    <li><a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.</li>
+                    <li><a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.</li>
+                    <!-- Add more essay links as needed -->
+                </ul>
             </main>
         </div>
     </div>
@@ -43,8 +49,8 @@
         <p>This is the footer content.</p>
     </footer>
 
-    <!-- JavaScript to handle sidebar toggle -->
     <script>
+        // JavaScript to handle sidebar toggle
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('active');
         });
