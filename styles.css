@@ -107,7 +107,7 @@ h1 {
     position: fixed; /*this also removes the empty space*/
     top: 0;
     left: -250px; /* Hidden by default */
-    width: 250px;
+    width: 250;
     height: 100%;
     background-color: rgba(224, 16, 16, 0.9); /* Dark background when popped out */
     transition: left 0.3s ease;
@@ -117,7 +117,16 @@ h1 {
     overflow-y: auto;
     
 }
+/* Slimmer sidebar on screens smaller than 768px */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 150px; /* Slimmer sidebar for mobile devices */
+    }
 
+    .sidebar.active + .content {
+        margin-left: 170px; /* Adjust content margin based on the new sidebar width */
+    }
+}
 /* Sidebar transparency when not active */
 .sidebar:not(.active) {
     background-color: transparent; /* Transparent background when not popped out */
@@ -143,7 +152,7 @@ h1 {
 /* Sidebar Styles */
 .sidebar {
     width: 25%;
-    background-color: rgba(13, 123, 84, 0); /*  background for sidebar  */
+    background-color: rgba(0, 0, 0, 1); /*  background for sidebar  */
     padding: 15px;
     box-shadow: none;
     z-index: 2;
@@ -171,7 +180,7 @@ h1 {
 }
 
 .sidebar ul li a:hover {
-    color: rgba(4, 93, 92, 1);
+    color: rgb(26, 107, 128);
 }
 
 /* Main Content Styles */
