@@ -152,7 +152,7 @@ h1 {
 /* Sidebar Styles */
 .sidebar {
     width: 25%;
-    background-color: rgba(0, 0, 0, 1); /*  background for sidebar  */
+    background-color: rgb(255, 0, 195); /*  background for sidebar  */
     padding: 15px;
     box-shadow: none;
     z-index: 2;
