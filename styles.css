@@ -117,16 +117,7 @@ h1 {
     overflow-y: auto;
     
 }
-/* Slimmer sidebar on screens smaller than 768px */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 150px; /* Slimmer sidebar for mobile devices */
-    }
 
-    .sidebar.active + .content {
-        margin-left: 170px; /* Adjust content margin based on the new sidebar width */
-    }
-}
 /* Sidebar transparency when not active */
 .sidebar:not(.active) {
     background-color: transparent; /* Transparent background when not popped out */
@@ -259,3 +250,39 @@ footer {
     z-index: 2;
     position: relative;
 }
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .sidebar {
+        width: 100%; /* Make sidebar full width */
+        margin-bottom: 20px;
+    }
+
+    main {
+        width: 100%; /* Make main content full width */
+        margin-left: 0; /* Remove side margins */
+        margin-right: 0;
+        padding: 10px; /* Reduce padding */
+    }
+
+    h2, p {
+        max-width: 100%; /* Ensure text blocks take up full width */
+        margin-left: 10px; /* Small margins */
+        margin-right: 10px;
+    }
+}
+@media (max-width: 480px) {
+    main {
+        padding: 5px; /* Further reduce padding on very small screens */
+    }
+
+    h2, p {
+        margin-left: 5px; /* Even smaller margins */
+        margin-right: 5px;
+    }
+}
+
