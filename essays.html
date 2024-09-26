@@ -65,6 +65,37 @@
     </footer>
 
     <script>
+         // JavaScript to handle sidebar toggle
+         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // JavaScript to filter essays based on category
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const essayItems = document.querySelectorAll('.essay-item');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Remove 'active' class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add 'active' class to the clicked button
+                    this.classList.add('active');
+
+                    // Filter essays based on category
+                    essayItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-categories').includes(category)) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
         // JavaScript to handle sidebar toggle and navigation
         function toggleSidebarAndNavigate() {
             const sidebar = document.querySelector('.sidebar');
