@@ -13,7 +13,7 @@
         </header>
         
         <!-- Sidebar Toggle Button (Three Stripes) -->
-        <div class="sidebar-toggle">
+        <div class="sidebar-toggle" onclick="toggleSidebarAndNavigate()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -27,8 +27,6 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="essays.html">Essays</a></li>
-                    <li><a href="anecdotes.html">Anecdotes</a></li>
-                    <li><a href="projects.html">Projects</a></li>
                 </ul>
             </aside>
 
@@ -36,14 +34,27 @@
             <main>
                 <h2>Essays Overview</h2>
 
-                <h4>
-                    everything you shouldn't talk about on a first date 
-                </h4>
+                <h4>everything you shouldn't talk about on a first date</h4>
+
+                <!-- Category Buttons -->
+                <div class="category-buttons">
+                    <button class="category-button active" data-category="all">All</button>
+                    <button class="category-button" data-category="philosophy">Philosophy</button>
+                    <button class="category-button" data-category="poetry">Poetry</button>
+                    <button class="category-button" data-category="nightlife">Nightlife</button>
+                </div>
+
+                <!-- Essay List -->
                 <ul class="essay-list">
-                    <li><a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.</li>
-                    <li><a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.</li>
-                    <li><a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.</li>
-                    <!-- Add more essay links as needed -->
+                    <li class="essay-item" data-categories="philosophy">
+                        <a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.
+                    </li>
+                    <li class="essay-item" data-categories="poetry">
+                        <a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.
+                    </li>
+                    <li class="essay-item" data-categories="nightlife">
+                        <a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.
+                    </li>
                 </ul>
             </main>
         </div>
@@ -54,10 +65,27 @@
     </footer>
 
     <script>
-        // JavaScript to handle sidebar toggle
+        // JavaScript to handle sidebar toggle and navigation
+        function toggleSidebarAndNavigate() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+    
+            // Check which page you are on and navigate accordingly
+            const currentPage = window.location.pathname;
+            if (currentPage.includes('index.html')) {
+                // If on index page, go to essays page
+                window.location.href = 'essays.html';
+            } else if (currentPage.includes('essays.html')) {
+                // If on essays page, go back to index page
+                window.location.href = 'index.html';
+            }
+        }
+    
+        // For sidebar toggle without navigation (if you want to keep that functionality)
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('active');
         });
     </script>
+    
 </body>
 </html>

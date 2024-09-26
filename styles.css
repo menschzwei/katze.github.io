@@ -143,7 +143,7 @@ h1 {
 /* Sidebar Styles */
 .sidebar {
     width: 25%;
-    background-color: rgb(255, 0, 195); /*  background for sidebar  */
+    background-color: rgba(255, 0, 195, 0); /*  background for sidebar  */
     padding: 15px;
     box-shadow: none;
     z-index: 2;
@@ -250,6 +250,26 @@ footer {
     z-index: 2;
     position: relative;
 }
+
+.category-buttons {
+    margin: 1rem 0;
+}
+.category-button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    font-family: Garamond, serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    margin: 0 5px 5px 0;
+}
+.category-button:hover, .category-button.active {
+    background-color: black;
+    color: white;
+}
+
 
 @media (max-width: 768px) {
     .content {

@@ -13,7 +13,7 @@
         </header>
 
         <!-- Sidebar Toggle Button -->
-        <div class="sidebar-toggle">
+        <div class="sidebar-toggle"onclick="toggleSidebarAndNavigate()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -22,12 +22,10 @@
         <div class="content">
             <!-- Sidebar (pop-out for all pages) -->
             <aside class="sidebar">
-                <h3>Categories</h3>
+                <h3></h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="essays.html">Essays</a></li>
-                    <li><a href="anecdotes.html">Anecdotes</a></li>
-                    <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </aside>
@@ -45,10 +43,27 @@
     </footer>
 
     <script>
-        // JavaScript to handle sidebar toggle
+        // JavaScript to handle sidebar toggle and navigation
+        function toggleSidebarAndNavigate() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+    
+            // Check which page you are on and navigate accordingly
+            const currentPage = window.location.pathname;
+            if (currentPage.includes('index.html')) {
+                // If on index page, go to essays page
+                window.location.href = 'essays.html';
+            } else if (currentPage.includes('essays.html')) {
+                // If on essays page, go back to index page
+                window.location.href = 'index.html';
+            }
+        }
+    
+        // For sidebar toggle without navigation (if you want to keep that functionality)
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('active');
         });
     </script>
+    
 </body>
 </html>
