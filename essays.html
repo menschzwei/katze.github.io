@@ -11,27 +11,25 @@
         <header>
             <h1>Essays</h1>
         </header>
-        
-        <!-- Sidebar Toggle Button -->
-        <div class="sidebar-toggle" onclick="navigateToPage()">
+
+        <!-- Burger Button -->
+        <div class="sidebar-toggle" onclick="navigateTo('index.html')">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
 
-        <div class="content">
-            <main>
-                <h2>Essays Overview</h2>
-                <h4>she lorem on my ipsum till i dolor she lorem on my ipsum till i dolor she lorem on my ipsum till i dolor she lorem on my ipsum till i dolor</h4>
+        <main>
+            <h2>Essays Overview</h2>
+            <h4>Everything you shouldn't talk about on a first date</h4>
 
-                <!-- Essay List -->
-                <ul class="essay-list">
-                    <li><a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.</li>
-                    <li><a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.</li>
-                    <li><a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.</li>
-                </ul>
-            </main>
-        </div>
+            <!-- Essay List -->
+            <ul class="essay-list">
+                <li><a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.</li>
+                <li><a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.</li>
+                <li><a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.</li>
+            </ul>
+        </main>
     </div>
 
     <footer>
@@ -39,17 +37,8 @@
     </footer>
 
     <script>
-        function navigateToPage() {
-            const currentPath = window.location.pathname;
-
-            // Adjusted for the new repo name
-            if (currentPath.includes('blog.github.io')) {
-                if (currentPath.endsWith('/essays.html')) {
-                    window.location.href = './index.html'; // Navigate back to the index page
-                } else if (currentPath.endsWith('/index.html') || currentPath.endsWith('/')) {
-                    window.location.href = './essays.html'; // Navigate to essays page
-                }
-            }
+        function navigateTo(page) {
+            window.location.href = page; // Navigate to the specified page
         }
     </script>
 </body>

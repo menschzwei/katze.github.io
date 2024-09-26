@@ -3,48 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essays</title>
+    <title>Katze</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="essays-page">
+<body class="home-page">
     <div class="wrapper">
         <header>
-            <h1>Essays</h1>
+            <h1>Katze</h1>
         </header>
 
-        <!-- Sidebar Toggle Button -->
-        <div class="sidebar-toggle" onclick="navigateToPage()">
+        <!-- Burger Button -->
+        <div class="sidebar-toggle" onclick="navigateTo('essays.html')">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
 
         <main>
-            <h2>Essays Overview</h2>
-            <h4>Everything you shouldn't talk about on a first date</h4>
-            <ul class="essay-list">
-                <li><a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.</li>
-                <li><a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.</li>
-                <li><a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.</li>
-            </ul>
+            <h2>Welcome.</h2>
+            <p>Any action outlined, any person mentioned, and any substance taken is purely fictional and bears no resemblance to reality whatsoever.</p>
         </main>
     </div>
 
     <footer>
-        <p>This is the footer content.</p>
+        <p>?</p>
     </footer>
 
     <script>
-        function navigateToPage() {
-            const currentPath = window.location.pathname;
-            const isEssaysPage = currentPath.endsWith('essays.html');
-
-            // Navigate back to index if on essays, or to essays if on index
-            if (isEssaysPage) {
-                window.location.href = './index.html'; // Navigate back to the index page
-            } else {
-                window.location.href = './essays.html'; // Navigate to essays page
-            }
+        function navigateTo(page) {
+            window.location.href = page; // Navigate to the specified page
         }
     </script>
 </body>
