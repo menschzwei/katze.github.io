@@ -43,22 +43,23 @@
     </footer>
 
     <script>
-      function toggleSidebarAndNavigate() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.classList.toggle('active');
-
-        const baseUrl = 'https://menschzwei.github.io/katze.github.io/'; // replace with your actual GitHub Pages URL
-
-        const currentPage = window.location.pathname;
-
-        if (currentPage.includes('index.html') || currentPage === '/') {
-            // Navigate to essays page
-            window.location.href = `${baseUrl}/essays.html`;
-        } else if (currentPage.includes('essays.html')) {
-            // Navigate back to index page
-            window.location.href = `${baseUrl}/index.html`;
-        }
-    }
-    </script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const burgerButton = document.querySelector('.sidebar-toggle');
+          
+          burgerButton.addEventListener('click', function() {
+            // Get the current URL pathname
+            const currentPath = window.location.pathname;
+            
+            // Check if it's the root ("/") or "/index.html"
+            if (currentPath === '/' || currentPath.endsWith('index.html')) {
+              // Redirect to the essays page
+              window.location.href = '/essays.html';
+            } else {
+              // Redirect to the index page
+              window.location.href = '/index.html';
+            }
+          });
+        });
+      </script>
 </body>
 </html>
