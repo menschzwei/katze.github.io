@@ -97,28 +97,19 @@
             });
         });
        
-    function toggleSidebarAndNavigate() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.classList.toggle('active');
+        function toggleSidebarAndNavigate() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active'); // Toggle sidebar slide in/out
 
-        const baseUrl = 'https://menschzwei.github.io/katze.github.io/'; // replace with your actual GitHub Pages URL
+            const currentPath = window.location.pathname;
 
-        const currentPage = window.location.pathname;
-
-        if (currentPage.includes('index.html') || currentPage === '/') {
-            // Navigate to essays page
-            window.location.href = `${baseUrl}/essays.html`;
-        } else if (currentPage.includes('essays.html')) {
-            // Navigate back to index page
-            window.location.href = `${baseUrl}/index.html`;
-        }
-    }
-
-
-        // For sidebar toggle without navigation (if you want to keep that functionality)
-        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('active');
-        });
+            // Normalize the path for GitHub Pages URLs
+            if (currentPath === '/' || currentPath.includes('index.html')) {
+                // Navigate to the essays page
+                window.location.href = './essays.html';
+            } else if (currentPath.includes('essays.html')) {
+                // Navigate back to the index page
+                window.location.href = './index.html';
     </script>
     
 </body>
