@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katze</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="home-page">
     <div class="wrapper">
         <header>
-            <h1>Katze</h1>
+            <h1>Blog</h1>
         </header>
 
-        <!-- Burger Button -->
-        <div class="sidebar-toggle" onclick="navigateTo('essays.html')">
+        <!-- Sidebar Toggle Button -->
+        <div class="sidebar-toggle" onclick="navigateToPage()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
 
-        <main>
-            <h2>Welcome.</h2>
-            <p>Any action outlined, any person mentioned, and any substance taken is purely fictional and bears no resemblance to reality whatsoever.</p>
-        </main>
+        <div class="content">
+            <main>
+                <h2>Welcome.</h2>
+                <p>she lorem on my ipsum till i dolor she lorem on my ipsum till i dolor she lorem on my ipsum till i dolor she lorem on my ipsum till i dolor she lorem on my ipsum till i dolor</p>
+            </main>
+        </div>
     </div>
 
     <footer>
@@ -30,8 +32,17 @@
     </footer>
 
     <script>
-        function navigateTo(page) {
-            window.location.href = page; // Navigate to the specified page
+        function navigateToPage() {
+            const currentPath = window.location.pathname;
+
+            // Adjusted for the new repo name
+            if (currentPath.includes('blog.github.io')) {
+                if (currentPath.endsWith('/') || currentPath.endsWith('/index.html')) {
+                    window.location.href = './essays.html'; // Navigate to essays page
+                } else if (currentPath.endsWith('/essays.html')) {
+                    window.location.href = './index.html'; // Navigate back to the index page
+                }
+            }
         }
     </script>
 </body>
