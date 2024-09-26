@@ -11,53 +11,25 @@
         <header>
             <h1>Essays</h1>
         </header>
-        
-        <!-- Sidebar Toggle Button (Three Stripes) -->
-        <div class="sidebar-toggle" onclick="toggleSidebarAndNavigate()">
+
+        <!-- Burger Button -->
+        <div class="sidebar-toggle" onclick="navigateTo('index.html')">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
 
-        <!-- Content Container -->
-        <div class="content">
-            <!-- Sidebar (initially hidden, slides out) -->
-            <aside class="sidebar">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="essays.html">Essays</a></li>
-                </ul>
-            </aside>
+        <main>
+            <h2>Essays Overview</h2>
+            <h4>Everything you shouldn't talk about on a first date</h4>
 
-            <!-- Main Content Area -->
-            <main>
-                <h2>Essays Overview</h2>
-
-                <h4>everything you shouldn't talk about on a first date</h4>
-
-                <!-- Category Buttons -->
-                <div class="category-buttons">
-                    <button class="category-button active" data-category="all">All</button>
-                    <button class="category-button" data-category="philosophy">Philosophy</button>
-                    <button class="category-button" data-category="poetry">Poetry</button>
-                    <button class="category-button" data-category="nightlife">Nightlife</button>
-                </div>
-
-                <!-- Essay List -->
-                <ul class="essay-list">
-                    <li class="essay-item" data-categories="philosophy">
-                        <a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.
-                    </li>
-                    <li class="essay-item" data-categories="poetry">
-                        <a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.
-                    </li>
-                    <li class="essay-item" data-categories="nightlife">
-                        <a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.
-                    </li>
-                </ul>
-            </main>
-        </div>
+            <!-- Essay List -->
+            <ul class="essay-list">
+                <li><a href="essay1.html">Title of Essay 1</a> - A short description or excerpt of the essay.</li>
+                <li><a href="essay2.html">Title of Essay 2</a> - A short description or excerpt of the essay.</li>
+                <li><a href="essay3.html">Title of Essay 3</a> - A short description or excerpt of the essay.</li>
+            </ul>
+        </main>
     </div>
 
     <footer>
@@ -65,64 +37,9 @@
     </footer>
 
     <script>
-         // JavaScript to handle sidebar toggle
-         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('active');
-        });
-
-        // JavaScript to filter essays based on category
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryButtons = document.querySelectorAll('.category-button');
-            const essayItems = document.querySelectorAll('.essay-item');
-
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    
-                    // Remove 'active' class from all buttons
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add 'active' class to the clicked button
-                    this.classList.add('active');
-
-                    // Filter essays based on category
-                    essayItems.forEach(item => {
-                        if (category === 'all' || item.getAttribute('data-categories').includes(category)) {
-                            item.style.display = '';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-       
-        function toggleSidebarAndNavigate() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('active'); // Toggle sidebar slide in/out
-
-    const currentPath = window.location.pathname;
-    const isGitHubPages = currentPath.includes('katze'); // Adjust this to your actual GitHub repo name
-
-    // Check if we are on the homepage or essays page
-    if (isGitHubPages) {
-        // When hosting on GitHub Pages, make sure to account for the repository name in the path
-        if (currentPath.endsWith('/') || currentPath.endsWith('/index.html')) {
-            window.location.href = './essays.html'; // Navigate to essays page
-        } else if (currentPath.endsWith('/essays.html')) {
-            window.location.href = './index.html'; // Navigate back to the index page
+        function navigateTo(page) {
+            window.location.href = page; // Navigate to the specified page
         }
-    } else {
-        // For local development or non-GitHub Pages hosting
-        if (currentPath === '/' || currentPath.endsWith('/index.html')) {
-            window.location.href = './essays.html'; // Navigate to essays page
-        } else if (currentPath.endsWith('/essays.html')) {
-            window.location.href = './index.html'; // Navigate back to the index page
-        }
-    }
-}
-
     </script>
-    
 </body>
 </html>

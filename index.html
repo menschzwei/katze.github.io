@@ -12,30 +12,17 @@
             <h1>Katze</h1>
         </header>
 
-        <!-- Sidebar Toggle Button -->
-        <div class="sidebar-toggle"onclick="toggleSidebarAndNavigate()">
+        <!-- Burger Button -->
+        <div class="sidebar-toggle" onclick="navigateTo('essays.html')">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
 
-        <div class="content">
-            <!-- Sidebar (pop-out for all pages) -->
-            <aside class="sidebar">
-                <h3></h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="essays.html">Essays</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </aside>
-
-            <main>
-                <!-- Main content for the page goes here -->
-                <h2>welcome.</h2>
-                <p>any action outlined, any person mentioned and any substance taken is purely fictional and bears no resemblence to reality whatsoever</p>
-            </main>
-        </div>
+        <main>
+            <h2>Welcome.</h2>
+            <p>Any action outlined, any person mentioned, and any substance taken is purely fictional and bears no resemblance to reality whatsoever.</p>
+        </main>
     </div>
 
     <footer>
@@ -43,32 +30,9 @@
     </footer>
 
     <script>
-       function toggleSidebarAndNavigate() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('active'); // Toggle sidebar slide in/out
-
-    const currentPath = window.location.pathname;
-    const isGitHubPages = currentPath.includes('katze'); // Adjust this to your actual GitHub repo name
-
-    // Check if we are on the homepage or essays page
-    if (isGitHubPages) {
-        // When hosting on GitHub Pages, make sure to account for the repository name in the path
-        if (currentPath.endsWith('/') || currentPath.endsWith('/index.html')) {
-            window.location.href = './essays.html'; // Navigate to essays page
-        } else if (currentPath.endsWith('/essays.html')) {
-            window.location.href = './index.html'; // Navigate back to the index page
+        function navigateTo(page) {
+            window.location.href = page; // Navigate to the specified page
         }
-    } else {
-        // For local development or non-GitHub Pages hosting
-        if (currentPath === '/' || currentPath.endsWith('/index.html')) {
-            window.location.href = './essays.html'; // Navigate to essays page
-        } else if (currentPath.endsWith('/essays.html')) {
-            window.location.href = './index.html'; // Navigate back to the index page
-        }
-    }
-}
-
-      </script>
-      
+    </script>
 </body>
 </html>
