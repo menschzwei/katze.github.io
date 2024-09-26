@@ -96,22 +96,25 @@
                 });
             });
         });
-        // JavaScript to handle sidebar toggle and navigation
-        function toggleSidebarAndNavigate() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active');
-    
-            // Check which page you are on and navigate accordingly
-            const currentPage = window.location.pathname;
-            if (currentPage.includes('index.html')) {
-                // If on index page, go to essays page
-                window.location.href = 'essays.html';
-            } else if (currentPage.includes('essays.html')) {
-                // If on essays page, go back to index page
-                window.location.href = 'index.html';
-            }
+       
+    function toggleSidebarAndNavigate() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('active');
+
+        const baseUrl = 'https://yourusername.github.io/repository-name'; // replace with your actual GitHub Pages URL
+
+        const currentPage = window.location.pathname;
+
+        if (currentPage.includes('index.html') || currentPage === '/') {
+            // Navigate to essays page
+            window.location.href = `${baseUrl}/essays.html`;
+        } else if (currentPage.includes('essays.html')) {
+            // Navigate back to index page
+            window.location.href = `${baseUrl}/index.html`;
         }
-    
+    }
+
+
         // For sidebar toggle without navigation (if you want to keep that functionality)
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('active');
